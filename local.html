@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+     <title>Getting Started</title>
+     <meta name="Description" content="hello">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <script src="js/jquery.min.js"></script>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<script type='text/javascript'>
+$( document ).ready(function() {
+    $("[rel='tooltip']").tooltip();    
+ 
+    $('.thumbnail').hover(
+        function(){
+            $(this).find('.caption').slideDown(250); //.fadeIn(250)
+        },
+        function(){
+            $(this).find('.caption').slideUp(250); //.fadeOut(205)
+        }
+    ); 
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready( function() {
+    $('#myCarousel').carousel({
+      interval:   4000
+  });
+  
+  var clickEvent = false;
+  $('#myCarousel').on('click', '.nav a', function() {
+      clickEvent = true;
+      $('.nav li').removeClass('active');
+      $(this).parent().addClass('active');    
+  }).on('slid.bs.carousel', function(e) {
+    if(!clickEvent) {
+      var count = $('.nav').children().length -1;
+      var current = $('.nav li.active');
+      current.removeClass('active').next().addClass('active');
+      var id = parseInt(current.data('slide-to'));
+      if(count == id) {
+        $('.nav li').first().addClass('active');  
+      }
+    }
+    clickEvent = false;
+  });
+});
+
+</script>
+
+<style>
+.grey{
+
+background-color: #fff;
+padding: 10px;
+
+}
+.bgimage {
+background-image: url(background.jpg);
+background-size: 100%;
+color: #fff;
+
+
+}
+.body {
+  padding-top: 50px;
+}
+    
+.thumbnail {
+    position:relative;
+    overflow:hidden;
+}
+ 
+.caption {
+    position:absolute;
+    top:0;
+    right:0;
+    background:rgba(66, 139, 202, 0.75);
+    width:100%;
+    height:100%;
+    padding:2%;
+    display: none;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+}
+.container1 {
+    margin-top: 20px;
+}
+
+/* Carousel Styles */
+.carousel-indicators .active {
+    background-color: #2980b9;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 460px
+}
+
+.carousel-control {
+    width: 0;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-image: none;
+  background-repeat: no-repeat;
+  text-shadow: none;
+}
+
+.carousel-control.left span {
+  padding: 15px;
+}
+
+.carousel-control.right span {
+  padding: 15px;
+}
+
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right, 
+.carousel-control .icon-prev, 
+.carousel-control .icon-next 
+{
+  position: absolute;
+  top: 45%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev {
+  left: 0;
+}
+
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next {
+  right: 0;
+}
+
+.carousel-control.left span,
+.carousel-control.right span {
+  background-color: #000;
+}
+
+.carousel-control.left span:hover,
+.carousel-control.right span:hover {
+  opacity: .7;
+  filter: alpha(opacity=70);
+}
+
+/* Carousel Header Styles */
+.header-text {
+    position: absolute;
+    top: 20%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;
+    color: #fff;
+}
+
+.header-text h2 {
+    font-size: 40px;
+}
+
+.header-text h2 span {
+    background-color: #2980b9;
+  padding: 10px;
+}
+
+.header-text h3 span {
+  background-color: #000;
+  padding: 15px;
+}
+
+.btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+}
+
+.btn-theme {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin-right: 15px;
+}
+
+.btn-theme:hover {
+    color: #000;
+    background-color: #29669f;
+    border-color: #fff;
+}
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail > h4 {
+    padding: 7px 5px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thumbnail h4 .info {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 0.6em;
+    padding-left: 15px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 4px;
+    border-radius: 0px;
+    border-bottom-left-radius: 5px;
+    cursor:  pointer;
+}
+
+.thumbnail h4 .info > span {
+    margin-right: 10px;   
+}
+
+.thumbnail img {
+   
+    width: 260px;
+    height:120px;
+ 
+}
+.thumbnail a.btn {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+     
+}
+.body
+{
+    padding-top: 20px;
+}
+#myCarousel .nav a small
+{
+    display: block;
+}
+#myCarousel .nav
+{
+    background: #eee;
+}
+.nav-justified > li > a
+{
+    border-radius: 0px;
+}
+.nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; }
+.nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
+.nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
+.nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+</style>
+
+<style type="text/css">
+    .bs-example{
+        
+        width: 100%;
+      
+  
+        border-radius:25px ;
+    }
+    .box{
+
+        height: 300px;
+        width: 500px;
+        padding: 40px;
+    position: absolute;
+  top: 90%;
+  left:50%;  
+  transform: translate(-55%,-55%);
+  border: 1px solid #8AC007;
+ border-radius:25px ;
+
+    }
+    .rcorner{
+
+         border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px; 
+    width: 250px;
+    height: 150px;
+    }
+    .form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body></body>
+<div class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container">
+
+        <div class="navbar-header">
+
+
+          <div class="navbar-brand">
+          <img src="google1.png" class="img-rounded" alt="Home PageLink" width="100" >            
+
+
+
+         </div>
+
+        </div>
+
+        <div class="nav navbar-nav navbar-right" class="container-fluid ">
+
+
+         
+   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+Create an account
+</button>
+        </div>
+
+
+      </div>
+    </div> 
+
+
+<hr><hr>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Register</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+
+     <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email </label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  
+ 
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>   
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modaL" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+             <h1 class="text-center login-title">Sign in to continue Website</h1>
+<div class="account-wall">
+                <img class="profile-img" src="manu.jpg"
+                    alt="">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <input type="password" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in</button>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form>
+            </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modaL" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        
+<div class="box">
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. What is HTML?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Bootstrap?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="container">
+
+<button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Yogamaya Rural Developement">Home</button>
+<button type="button" class="btn btn-success">About Us</button>
+<button type="button" class="btn btn-success">Contact Us</button>
+<button type="button" class="btn btn-success">Vision and Mission</button>
+
+</div>
+
+
+<div class="container1">
+  <div class="row">
+    <!-- Carousel -->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <div class="item active">
+            <img src="1.jpg" alt="First slide">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                              <span>Welcome to <strong>The World of Innovation</strong></span>
+                            </h2>
+                            <br>
+                           
+                            <br>
+                            <div class="" >
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal2">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal">Register</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+          </div>
+          <div class="item">
+            <img src="2.jpg" alt="Second slide">
+            <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                                <span>Welcome to The World of Innovation</span>
+                            </h2>
+                            <br>
+                           
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal2">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal">Register</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+          </div>
+          <div class="item">
+            <img src="3.jpg" alt="Third slide">
+            <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                                <span>Welcome to The World of Innovation</span>
+                            </h2>
+                            <br>
+                           
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal2">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#" data-toggle="modal" data-target="#myModal">Register</a></div>
+                        </div>
+                    </div><!-- /header-text -->
+          </div>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div><!-- /carousel -->
+  </div>
+</div>
+
+<div class="grey">
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
+<div class="well">
+ <img src="keshav.jpg" class="img-rounded" alt="Home PageLink" width="100px" height="100">
+<panel class="header" class="panel panel-primary">
+  <h3 >Keshav Jha</h3>Law graduate,Social Reformer, optimist  and entreprenaur.
+<a href="http://bkdrluhar.com/00-htm-Graphics/06-Exibitions-Soul-Hindi.htm" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal3"><div >Click here for details </div></a>
+</panel>
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="well">
+ <img src="uddhav.jpg" class="img-rounded" alt="Home PageLink" width="100px" height="100">
+  <h3>Uddhav Jha</h3>Future globally well eknowed Businessman.
+<a href="http://bkdrluhar.com/00-htm-Graphics/06-Exibitions-Soul-Hindi.htm" class="btn btn-primary navbar-btn"><div >Click here for details </div></a>
+
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="well">
+ <img src="manu.jpg" class="img-circle" alt="Home PageLink" width="100px" height="100">
+   <h3>Manu K Jha</h3>Manu K Jha a Social Enterpreneur, Developer and Visionary of Leadership Attitude .
+<a href="http://bkdrluhar.com/00-htm-Graphics/06-Exibitions-Soul-Hindi.htm" class="btn btn-primary navbar-btn"><div >Click here for details </div></a>
+
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="well">
+ <img src="tree.jpg" class="img-rounded" alt="Home PageLink" width="100" height="100">
+   <h3>The Tree of Life</h3><p>Stand Tall and Proud
+Sink your roots deeply into the Earth
+Reflect the light of a greater source
+
+</p>
+<a href="http://bkdrluhar.com/00-htm-Graphics/06-Exibitions-Soul-Hindi.htm" class="btn btn-primary navbar-btn"><div >Click here for details </div></a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+  <div class="row">
+<div class="col-md-12 bgimage img-rounded" >
+  
+    <div class="container">
+      <div class="bgimage-inside"><h1>Thought For Today</h1>
+      <p class="lead">Manu K Jha a Social Enterpreneur, Developer and Visionary of Leadership Attitude !</p>
+
+      <a class="btn btn-large btn-success" href="#">Learn more</a>
+
+</div>
+    </div>
+
+</div>
+</div>
+
+
+<!--test here -->
+
+ <!-- image test start  
+  <div class="container">
+    <div>
+
+      <img src="background.jpg" class="img-rounded" alt="#">
+      <h1>Another example headline.</h1>
+      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget.</p>
+      <a class="btn btn-large btn-primary" href="#">Learn more</a>
+    </div>
+  </div>
+ test end -->
+<hr>
+<div class="container">
+  
+    <div class="row">
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Child developement</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                </div>
+                <img src="22.jpg" alt="..." >
+            </div>
+      </div>
+      
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Rural developement</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                </div>
+                <img src="33.jpg" alt="..." >
+            </div>
+      </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Nurture of nature developement</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                </div>
+                <img src="44.jpg" alt="..." >
+            </div>
+      </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Social Developement</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="http://bkdrluhar.com/00-htm-Graphics/06-Exibitions-ACW.htm" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                </div>
+                <img src="12345.jpg" alt="..." >
+            </div>
+      </div>        
+        
+  </div>
+  
+</div><!-- /.container -->
+
+<div class="container">
+
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="182" height="117" align="left" hspace="0">
+        <param name="movie" value="images/shivanew.swf">
+        <param name="quality" value="High">
+        <param name="salign" value="T">
+        <embed src="img/shivanew.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="182" height="117" quality="High" salign="T"></object>
+
+</div>
+<hr>
+
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="shivbaba.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        Supreme Soul - Shiv</h3>
+                    <p>
+                        I am the Ocean of Love;
+I show you the path of love.
+My love remains unbroken and constant.
+I cannot forget even one of you.
+I have so much love for you, 
+and My love is unconditional and unlimited.
+I am the Beloved.
+You have been calling out to Me for a long time..</p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="8.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        Who Is God?</h3>
+                    <p>
+                       We are used to knowing things by seeing them, hearing them, tasting them, touching or smelling them. Most of us have grown up in a ‘seeing–is–believing’ and ‘hands on’ culture and we are used to perceiving things in that way. Because we can’t see, hear, taste, touch or smell God, the question arises – is God for real?.</p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="9.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        God: The Supreme Soul</h3>
+                    <p>
+                        Like us, God is also a soul. Unlike us, He is referred to as the Supreme Soul – the only soul who never takes a body (gross or subtle, human or angelic) of His own. He is beyond the effects of actions and is never subject to the dualities of birth and death, pleasure and pain, success and failure. Being beyond the limits of time of this physical world, He retains absolute knowledge of the universe and all its dimensions..</p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="10.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        Where is God?</h3>
+                    <p>
+                        God lives, not everywhere but somewhere. A thought of God almost always takes the eyes upwards, as though one is perhaps expecting a face to miraculously appear from behind the clouds or to beam down from the moon. Thoughts are powerful. They link one soul to another. If they are properly channelled, thoughts can even go where only the soul can travel – beyond the moon and stars to a dimension of golden red light, the original home of all souls. Immersed in the experience of the warmth of this light, the soul feels as though it is truly at home at last, and with God..</p>
+                </div>
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Carousel Inner -->
+        <ul class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Supreme Authority</a></li>
+            <li data-target="#myCarousel" data-slide-to="1"><a href="#">Who Is God</a></li>
+            <li data-target="#myCarousel" data-slide-to="2"><a href="#">God: The Supreme Soul</a></li>
+            <li data-target="#myCarousel" data-slide-to="3"><a href="#">Where is God</a></li>
+        </ul>
+    </div>
+    <!-- End Carousel -->
+</div>
+<hr/>
+
+
+<footer class="bs-footer" role="contentinfo">
+  <div class="container">
+   
+    <p class"well">Developed and maintained by Manav group of Companies</p>
+  </div>
+</footer>
+
+<!--<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    Brand and toggle get grouped for better mobile display 
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <! Collect the nav links, forms, and other content for toggling 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+-->
+ <!-- <div class="well" >
+    <img src="google.png" class="img-rounded" alt="Cinque Terre" width="100" >
+    <a href="" class="btn btn-danger" class="container text-right">Create an account</a>
+       
+  </div> 
+
+
+
+ Latest compiled and minified JavaScript -->
+<script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  </body>
+</html>
